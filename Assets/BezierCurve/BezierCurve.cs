@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -82,6 +83,11 @@ namespace BizereCurve
             }
             
             return curvePoints;
+        }
+
+        private void OnValidate()
+        {
+            _curveStep = _curveStep <= 0 ? 0.01f : _curveStep;
         }
 
         #region EDITOR
